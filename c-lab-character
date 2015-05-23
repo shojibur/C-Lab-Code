@@ -1,0 +1,72 @@
+Character & Strings
+1.	Write a C program to find the Frequency of Characters.
+
+Output
+Enter a string: This website is awesome.
+Enter a character to find frequency: e
+Frequency of e = 4
+
+Answer:
+#include <stdio.h>
+int main(){
+   char c[1000],ch;
+   int i,count=0;
+   printf("Enter a string: ");
+   gets(c);
+   printf("Enter a character to find frequency: ");
+   scanf("%c",&ch);
+   for(i=0;c[i]!='\0';++i)
+   {
+       if(ch==c[i])
+           ++count;
+   }
+   printf("Frequency of %c = %d", ch, count);
+   return 0;
+}
+
+2.	Write a Source Code to Remove Characters in String except Alphabets.
+
+Output
+     Enter a string: p2'r"o@gram84iz./
+     Output String: programiz
+    Answer:
+#include<stdio.h>
+int main(){
+    char line[150];
+    int i,j;
+    printf("Enter a string: ");
+    gets(line);
+    for(i=0; line[i]!='\0'; ++i)
+    {
+        while (!((line[i]>='a'&&line[i]<='z') || (line[i]>='A'&&line[i]<='Z' || line[i]=='\0')))
+        {
+            for(j=i;line[j]!='\0';++j)
+            {
+                line[j]=line[j+1];
+            }
+            line[j]='\0';
+        }
+    }
+    printf("Output String: ");
+    puts(line);
+    return 0;
+}
+
+3.	Write a C program to Calculated Length without Using strlen() function.
+
+Output
+     Enter a string: Programiz
+     Length of string: 9
+
+Answer:
+
+#include <stdio.h>
+int main()
+{
+    char s[1000],i;
+    printf("Enter a string: ");
+    scanf("%s",s);
+    for(i=0; s[i]!='\0'; ++i);
+    printf("Length of string: %d",i);
+    return 0;
+}
